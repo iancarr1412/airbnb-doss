@@ -53,7 +53,7 @@ const Modal: React.FC<ModalProps> = ({
   }, [disabled, onSubmit]);
 
   const handleSecondaryAction = useCallback(() => {
-    if (disabled) {
+    if (disabled || !secondaryAction) {
       return;
     }
     secondaryAction();
@@ -66,9 +66,7 @@ const Modal: React.FC<ModalProps> = ({
   return (
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-neutral-800/70">
-        
         <div className="relative w-full h-full mx-auto my-6 md:w-4/6 lg:w-3/6 xl:w-2/5 md:h-auto lg:h-auto">
-
           {/*CONTENT*/}
           <div className={`
             translate
@@ -77,10 +75,8 @@ const Modal: React.FC<ModalProps> = ({
             ${showModal ? 'translate-y-0' : 'translate-y-full'}
             ${showModal ? 'opacity-100' : 'opacity-0'}
           `}>
-
           <div className="relative flex flex-col w-full h-full bg-white border-0 rounded-lg shadow-lg outline-none translate lg:h-auto md:h-auto focus:outline-none">
               {/*header*/}
-            
               <div className="
                 flex 
                 items-center 

@@ -1,6 +1,7 @@
 import './globals.css'
 import Navbar from './components/navbar/Navbar'
 import Modal from './components/modals/Modal'
+import RegisterModal from './components/modals/RegisterModal'
 import ClientOnly from './components/ClientOnly'
 import type { Metadata } from 'next'
 // import { Inter } from 'next/font/google'
@@ -10,7 +11,7 @@ import { Nunito } from 'next/font/google'
 const font = Nunito({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Airbnb UK',
+  title: 'DosS UK',
   description: 'Airbnb clone!',
 }
 
@@ -23,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         {/* <ClientOnly> */}
-          {/* <Modal isOpen/> */}
+          <RegisterModal title="Hello!" isOpen/>
           <Navbar />
         {/* </ClientOnly> */}
         {children}
